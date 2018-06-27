@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>Teste de Websocket
+            <small> | websocket!</small>
+        </h1>
+    </div>
+    Servidor: {{dataServidor}}
+    <br>
+    Cliente: {{dataCliente}}
+    <br>
+    Valor Teclado: {{valorTeclado}}
+    &nbsp;
+    Estado Botao: {{botaoPressionado}}
+    &nbsp;
+    KeyCode: {{keyCode}}
+    <br>
+
+    <div class="row">
+        <div class="col-md-6 col-xs-12" align="center" >
+            <button class="btn" ng-style="styleControllers">{{msgStyleControllers}}
+                <img class="imgrotation" id="feedback" ng-src="data:image/webp;base64,{{imagem}}" >
+            </button>
+
+        </div>
+        <div class="col-md-1 col-xs-12" align="center" >
+            <!--ng-blur="clickControllers()"-->
+            <br>
+            <button ng-click="clickControllers()" ng-keydown="comandoKeyDownTeclado($event)"
+                    ng-keyup="comandoKeyUpTeclado()">
+                Habilitar Controle
+            </button>
+        </div>
+        <div class="col-md-5 col-xs-12">
+        <br>
+            <div align="center" class="row">
+                <button ng-disabled="disabledControllers" ng-mousedown="comandoClickPressionado('38')"
+                        ng-mouseup="comandoKeyUpTeclado()" ng-keydown="comandoKeyDownTeclado($event)"
+                        ng-keyup="comandoKeyUpTeclado()">
+                    <span id="controleParaCima" class="btn glyphicon glyphicon-triangle-top col-xs-12"></span>
+                </button>
+            </div>
+            <div class="row">
+                <div align="center" class="col-xs-6">
+                    <button ng-disabled="disabledControllers" ng-mousedown="comandoClickPressionado('37')"
+                            ng-mouseup="comandoKeyUpTeclado()" ng-keydown="comandoKeyDownTeclado($event)"
+                            ng-keyup="comandoKeyUpTeclado()">
+                        <span id="controleParaEsquerda" class="btn glyphicon glyphicon-triangle-left"></span>
+                    </button>
+                </div>
+                <div align="center" class="col-xs-6">
+                    <button ng-disabled="disabledControllers" ng-mousedown="comandoClickPressionado('39')"
+                            ng-mouseup="comandoKeyUpTeclado()" ng-keydown="comandoKeyDownTeclado($event)"
+                            ng-keyup="comandoKeyUpTeclado()">
+                        <span id="controleParaDireita" class="btn glyphicon glyphicon-triangle-right"></span>
+                    </button>
+                </div>
+            </div>
+            <div align="center" class="row">
+                <button ng-disabled="disabledControllers" ng-mousedown="comandoClickPressionado('40')"
+                        ng-mouseup="comandoKeyUpTeclado()" ng-keydown="comandoKeyDownTeclado($event)"
+                        ng-keyup="comandoKeyUpTeclado()">
+                    <span id="controleParaBaixo" class="btn glyphicon glyphicon-triangle-bottom col-xs-12"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

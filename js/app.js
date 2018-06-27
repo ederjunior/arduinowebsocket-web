@@ -1,0 +1,1 @@
+angular.module("arduinowebsocket-web",["ngRoute", "angular-loading-bar","ngWebSocket"]);
